@@ -8,4 +8,12 @@
 ## 2.框架
 百度PaddlePaddleV1.6：[Paddle](https://www.paddlepaddle.org.cn/)
 
-##
+## 3.依赖
+1. python
+2. paddle
+3. numpy
+4. scikit-image
+5. opencv-python
+
+## 4.运行方式
+下载数据集,修改run_minist.py文件中路径信息，配置参数，运行run_mnist.py文件

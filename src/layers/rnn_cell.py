@@ -7,7 +7,7 @@ import paddle.fluid as fluid
 
 
 ## Eidetic LSTM recurrent network cell
-class EideticLSTMCell(object):
+class GRU3DCell(object):
     """
     The basic class of Eidetic LSTM recurrent network cell.
     """
@@ -23,7 +23,7 @@ class EideticLSTMCell(object):
                forget_bias=1.0,
                name="eidetic_lstm_cell"):
 
-    # Construct EideticLSTMCell. #
+    # Construct GRU3DCell. #
         if conv_ndims != len(input_shape) - 2:
             raise ValueError("Invalid input_shape {} for conv_ndims={}.".format(input_shape, conv_ndims))
 
@@ -136,7 +136,7 @@ class EideticLSTMCell(object):
         return output, new_global_memory
 
 
-class Eidetic2DLSTMCell(EideticLSTMCell):
+class Eidetic2DLSTMCell(GRU3DCell):
   """
   2D Eidetic LSTM recurrent network cell.
   """
@@ -145,7 +145,7 @@ class Eidetic2DLSTMCell(EideticLSTMCell):
     super(Eidetic2DLSTMCell, self).__init__(conv_ndims=2, name=name, **kwargs)
 
 
-class Eidetic3DLSTMCell(EideticLSTMCell):
+class Eidetic3DLSTMCell(GRU3DCell):
   """
   3D Eidetic LSTM recurrent network cell.
   """
